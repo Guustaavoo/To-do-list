@@ -17,7 +17,7 @@ function mostrarTarefas() {
     let novaLi = ''
     minhaListaDeItens.forEach((item, posicao) => {
         novaLi = novaLi + `
-            <li class="task" ${item.concluida && "done"}">
+            <li class="task ${item.concluida && "done"}">
                 <img src="./img/checked.png" alt="check-na-tarefa" onclick="concluirTarefa(${posicao})">
                 <p>${item.tarefa}</p>
                 <img src="./img/trash.png" alt="tarefa-para-o-lixo" onclick="deletarItem(${posicao})">
@@ -26,9 +26,7 @@ function mostrarTarefas() {
     })
 
     listaCompleta.innerHTML = novaLi
-
     localStorage.setItem('lista', JSON.stringify(minhaListaDeItens))
-
 }
 
 function concluirTarefa(posicao){
