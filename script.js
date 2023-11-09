@@ -33,12 +33,12 @@ function concluirTarefa(posicao){
     minhaListaDeItens[posicao].concluida = !minhaListaDeItens[posicao].concluida
     mostrarTarefas()
 }
-
+//Splice remove um item do array e se necessário substitui na posição...
 function deletarItem(posicao){
     minhaListaDeItens.splice(posicao, 1)
     mostrarTarefas()
 }
-
+//Estou usando um armazenamento interno para poder recarregar a página e manter os itens na lista...
 function recarregarTarefas(){
     const tarefasDoLocalStorage = localStorage.getItem('lista')
     if(tarefasDoLocalStorage){
